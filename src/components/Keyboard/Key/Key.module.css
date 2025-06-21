@@ -1,0 +1,61 @@
+/* 
+ * This CSS module styles the keys of a virtual keyboard component.
+ * It includes styles for regular keys, special keys, and hover/active states.
+ * The design is responsive for smaller screens.
+ */
+.key {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #f7fafc, #edf2f7);
+    border: 2px solid #e2e8f0;
+    color: #2d3748;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    user-select: none;
+}
+
+.key:hover {
+    background: linear-gradient(135deg, #edf2f7, #e2e8f0);
+    border-color: #cbd5e0;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.key:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.specialKey {
+    padding: 0 16px;
+    min-width: 60px;
+    width: auto;
+    background: linear-gradient(135deg, #4299e1, #3182ce);
+    border-color: #3182ce;
+    color: white;
+    font-size: 0.8rem;
+}
+
+.specialKey:hover {
+    background: linear-gradient(135deg, #3182ce, #2c5aa0);
+    border-color: #2c5aa0;
+}
+
+@media (max-width: 640px) {
+    .key {
+        width: 26px;
+        height: 26px;
+        font-size: 0.8rem;
+    }
+
+    .specialKey {
+        min-width: 46px;
+        font-size: 0.7rem;
+    }
+}

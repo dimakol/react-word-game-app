@@ -1,0 +1,69 @@
+/* 
+ * This CSS module styles the game board component.
+ * It includes styles for the game wrapper, title, squares, status messages, and instructions.
+ * The design is responsive for smaller screens.
+ */
+.gameWrapper {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+}
+
+.gameTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #2d3748;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 640px) {
+    .gameWrapper {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .gameTitle {
+        font-size: 2rem; 
+    }
+}
+
+.squareContainer {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.statusMessage {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.statusMessage.correct {
+    color: #38a169;
+}
+
+.statusMessage.incorrect {
+    color: #e53e3e;
+}
+
+.instructions {
+    color: #718096;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.instructions p {
+    margin: 4px 0;
+}

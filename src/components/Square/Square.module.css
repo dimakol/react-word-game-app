@@ -1,0 +1,84 @@
+/* 
+ * This CSS module styles the squares of the letters that selected.
+ * It includes styles for empty squares, correct squares, and incorrect squares.
+ * The design is responsive for smaller screens.
+ */
+.square {
+    width: 56px;
+    height: 56px;
+    border: 3px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.square::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.square:hover::before {
+    left: 100%;
+}
+
+@media (max-width: 640px) {
+    .square {
+        width: 48px;
+        height: 48px;
+        font-size: 1.25rem; 
+    }   
+}
+
+.empty {
+    border-color: #e2e8f0;
+    background: #f8fafc;
+    color: #4a5568;
+}
+
+.correct {
+    border-color: #48bb78;
+    background: linear-gradient(135deg, #68d391, #48bb78);
+    color: white;
+    animation: correctPulse 0.6s ease-in-out;
+}
+
+.incorrect {
+    border-color: #f56565;
+    background: linear-gradient(135deg, #fc8181, #f56565);
+    color: white;
+    animation: incorrectShake 0.6s ease-in-out;
+}
+
+@keyframes correctPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes incorrectShake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20%, 60% {
+        transform: translateX(-4px);
+    }
+    40%, 80% {
+        transform: translateX(4px);
+    }
+}
